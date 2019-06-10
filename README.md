@@ -18,3 +18,16 @@ This class provides methods to read the .csv file and convert the data from the 
 The functions provided by this class are:
 * isFileOpen() - Returns TRUE when the file pointer to the .csv file is set.
 * toArray() - Reads the .csv file and generates an array containing the .csv file data and it has two optional parameters ```$num_rows``` and ```$omit_first_row```. The ```$num_rows``` argument limits the number of rows of .csv file to convert and ```$omit_first_row``` specifies whether to omit reading the first row as most .csv file contains the header as the first row.
+
+# \Locale\Rides class
+This class provides methods necessary to fetch the required data from the database related to the rides. The constructor of this class takes the object of type ```\Locale\Database``` class.
+The functions provided by this class are:
+* getLatLong() - This function retrieves the latitude and longitude specified by the id.
+* getAllRides() - Returns all the rides from the table and if we want to retrive the data by columns/fields then pass an array as argument with the column/fields names.
+* getRidesByTravelType() - Returns the rows by travel type.
+* getRidesByUserId() - Return all the rides travelled by the user
+* getRidesCancelled() - Returns all the cancelled rides
+* getRidesNotCancelled() - Returns all rides other than cancelled rides
+* getRidesByVehicleModelId() - Returns all the rides by the vehicle_model_id
+
+**NOTE**: For more information on the parameters of the functions refer to the doc block at the top of the function in the class.
