@@ -33,7 +33,7 @@ The functions provided by this class are:
 # How to use this API?
 To use the Locale API from other sources like web and mobile applications we need to generate the reponse as JSON format.
 
-The following snippet retrieves all the rides from the table 'rides' with the columns/fields and generates the response of the format JSON.
+The following snippet retrieves all the rides from the table 'rides' with the columns/fields as *id*, *user_id*, *travel_type_id*, *from_lat*, and *from_long* and generates the response of the format JSON.
 ```php
 <?php
 
