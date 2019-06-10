@@ -21,6 +21,8 @@ class Database {
 
   /**
    * Instance of this class
+   *
+   * @var \Locale\Database $instance
    */
   private static $instance;
 
@@ -33,6 +35,9 @@ class Database {
 
   /**
    * Returns the status of the connection
+   *
+   * @return boolean
+   *  Whether the connection is established or not
    */
   public function isConnectionEstablished() {
     if(!$this->db_connection) {
@@ -43,6 +48,9 @@ class Database {
 
   /**
    * Returns the instance of this class
+   *
+   * @return \Locale\Database
+   *  Returns instance
    */
   public static function getInstance() {
     if( is_null(self::$instance) ) {
@@ -53,6 +61,11 @@ class Database {
 
   /**
    * Returns the Postgresql database connection
+   *
+   * @param string $connection_string optional
+   *  Connection string to connect to postgres database
+   *
+   * @return object
    */
   public function getConnection($connection_string = '') {
     if(!empty($connection_string) && is_null($this->db_connection)) {
@@ -159,7 +172,10 @@ class Database {
   }
 
   /**
-   * Assigns the default value if not present
+   * Assigns the default value to schema if not present
+   *
+   * @param array $schema
+   *  Array defining the schema of the table
    */
   public function defaultSchema(&$schema) {
     foreach($schema as $column => $data) {
