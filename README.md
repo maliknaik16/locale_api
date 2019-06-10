@@ -30,4 +30,31 @@ The functions provided by this class are:
 * getRidesNotCancelled() - Returns all rides other than cancelled rides
 * getRidesByVehicleModelId() - Returns all the rides by the vehicle_model_id
 
+# How to use this API?
+To use the Locale API from other sources like web and mobile applications we need to generate the reponse as JSON format.
+
+The following snippet retrieves all the rides from the table 'rides' with the columns/fields and generates the response of the format JSON.
+```php
+<?php
+
+use Locale;
+
+// Set content type to JSON
+header('Content-Type: application/json');
+
+$connection_string = '<CONNECTION_STRING_FOR_POSTGRESQUL>';
+$fields = array('id', 'user_id', 'travel_type_id', 'from_lat', 'from_long');
+
+$database = Database::getInstance();
+$db_connection = $database->getConnection($connection_string);
+
+$rides = new Rides($database, 'rides');
+
+$result = $rides->getAllRides($fields);
+
+echo json_encode($result);
+
+
+```
+
 **NOTE**: For more information on the parameters of the functions refer to the doc block at the top of the function in the class.
