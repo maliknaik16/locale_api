@@ -57,4 +57,21 @@ echo json_encode($result);
 
 ```
 
+# How to convert .csv file to array?
+The CSVHandler class from the Locale namespace provides the method to convert the .csv file to array.
+
+The following snippet shows how to convert .csv file to array
+```php
+<?php
+
+use Locale;
+
+$handler = new CSVHandler('<CSV_FILE_NAME>');
+
+// $result stores the .csv file in the form of an array
+$result = $handler->toArray();
+
+
+```
+
 **NOTE**: For more information on the parameters of the functions refer to the doc block at the top of the function in the class.
