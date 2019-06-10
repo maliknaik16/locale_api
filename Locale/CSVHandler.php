@@ -13,16 +13,23 @@ namespace Locale;
 class CSVHandler {
   /**
    * CSV file name to parse
+   *
+   * @var string $file_name
    */
   protected $file_name;
 
   /**
    * File pointer for the .csv file
+   *
+   * @var FILE $fp
    */
   protected $fp;
 
   /**
    * Initializes the $file
+   *
+   * @param string $file_name
+   *  Name of the .csv file
    */
   public function __construct($file_name) {
     $this->file_name = $file_name;
@@ -33,6 +40,8 @@ class CSVHandler {
 
   /**
    * Returns if the file pointer is initialized
+   *
+   * @return boolean
    */
   public function isFileOpen() {
     if(!$this->fp) {
@@ -43,6 +52,10 @@ class CSVHandler {
 
   /**
    * Converts the rows from the .csv file to array
+   * @param int $num_rows
+   *  Limit the conversion to this number of rows
+   * @param boolean $omit_first_row
+   *  If TRUE then it omits the first row from the .csv file
    */
   public function toArray($num_rows = NULL, $omit_first_row = TRUE) {
     $count = 0;
