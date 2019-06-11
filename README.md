@@ -42,7 +42,7 @@ use Locale;
 // Set content type to JSON
 header('Content-Type: application/json');
 
-$connection_string = '<CONNECTION_STRING_FOR_POSTGRESQUL>';
+$connection_string = '<CONNECTION_STRING_FOR_POSTGRESQL>';
 $fields = array('id', 'user_id', 'travel_type_id', 'from_lat', 'from_long');
 
 $database = Database::getInstance();
