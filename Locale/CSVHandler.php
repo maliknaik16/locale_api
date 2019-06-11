@@ -75,4 +75,17 @@ class CSVHandler {
     }
     return $result;
   }
+
+  /**
+   * Returns the header of the .csv file
+   *
+   * @return array
+   *  Array containing the fields of the .csv file usually they are present at
+   *  the first row.
+   */
+  public function getHeader() {
+    fseek($this->fp, 0);
+
+    return fgetcsv($this->fp);
+  }
 }
